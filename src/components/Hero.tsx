@@ -42,17 +42,34 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Hero Image */}
+        {/* Interactive Lanyard */}
         <div className="flex justify-center lg:justify-end">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-brand rounded-full blur-xl opacity-20 animate-pulse-glow"></div>
-            <img 
-              src={heroPortrait} 
-              alt="Professional portrait with cyan lighting" 
-              className="relative z-10 w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full border-2 border-primary/20 shadow-elegant animate-float"
-            />
-            <div className="absolute top-4 right-4 w-4 h-4 bg-primary rounded-full animate-pulse glow-border"></div>
-            <div className="absolute bottom-8 left-4 w-3 h-3 bg-accent rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+          <div className="relative lanyard-container">
+            {/* Lanyard Strap */}
+            <div className="lanyard-strap">
+              <div className="strap-segment strap-1"></div>
+              <div className="strap-segment strap-2"></div>
+              <div className="strap-segment strap-3"></div>
+              <div className="strap-segment strap-4"></div>
+              <div className="strap-segment strap-5"></div>
+            </div>
+            
+            {/* ID Card */}
+            <div className="lanyard-card">
+              <div className="absolute inset-0 bg-gradient-brand rounded-lg blur-xl opacity-20 animate-pulse-glow"></div>
+              <img 
+                src={heroPortrait} 
+                alt="Professional ID Card with cyan lighting" 
+                className="relative z-10 w-72 h-96 lg:w-80 lg:h-[28rem] object-cover rounded-lg border-2 border-primary/20 shadow-elegant"
+              />
+              {/* Card Details Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4 rounded-b-lg">
+                <div className="text-white text-sm font-medium">Professional</div>
+                <div className="text-primary text-xs">Creative Developer</div>
+              </div>
+              <div className="absolute top-4 right-4 w-4 h-4 bg-primary rounded-full animate-pulse glow-border"></div>
+              <div className="absolute top-4 left-4 w-3 h-3 bg-accent rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+            </div>
           </div>
         </div>
       </div>
