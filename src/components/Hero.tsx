@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import PhotoCard from "@/components/ui/PhotoCard";
 import heroPortrait from "@/assets/hero-portrait.webp";
 
 const Hero = () => {
@@ -42,35 +43,48 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Interactive Lanyard */}
+        {/* Swipeable PhotoCard */}
         <div className="flex justify-center lg:justify-end">
-          <div className="relative lanyard-container">
-            {/* Lanyard Strap */}
-            <div className="lanyard-strap">
-              <div className="strap-segment strap-1"></div>
-              <div className="strap-segment strap-2"></div>
-              <div className="strap-segment strap-3"></div>
-              <div className="strap-segment strap-4"></div>
-              <div className="strap-segment strap-5"></div>
-            </div>
-            
-            {/* ID Card */}
-            <div className="lanyard-card">
-              <div className="absolute inset-0 bg-gradient-brand rounded-lg blur-xl opacity-20 animate-pulse-glow"></div>
-              <img 
-                src={heroPortrait} 
-                alt="Professional ID Card with cyan lighting" 
-                className="relative z-10 w-72 h-96 lg:w-80 lg:h-[28rem] object-cover rounded-lg border-2 border-primary/20 shadow-elegant"
-              />
-              {/* Card Details Overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4 rounded-b-lg">
-                <div className="text-white text-sm font-medium">Professional</div>
-                <div className="text-primary text-xs">Creative Developer</div>
+          <PhotoCard
+            frontImage={heroPortrait}
+            frontAlt="Professional ID Card with cyan lighting"
+            backContent={
+              <div className="space-y-4 text-foreground">
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold gradient-text">Creative Professional</h3>
+                  <p className="text-muted-foreground text-sm">Digital Experience Designer</p>
+                </div>
+                
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Experience:</span>
+                    <span className="text-primary">5+ Years</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Specialty:</span>
+                    <span className="text-primary">Full Stack</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Projects:</span>
+                    <span className="text-primary">50+ Completed</span>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-primary/20">
+                  <div className="text-xs text-muted-foreground">
+                    "Passionate about creating exceptional digital experiences"
+                  </div>
+                </div>
+
+                <div className="flex gap-2 justify-center pt-2">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                </div>
               </div>
-              <div className="absolute top-4 right-4 w-4 h-4 bg-primary rounded-full animate-pulse glow-border"></div>
-              <div className="absolute top-4 left-4 w-3 h-3 bg-accent rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
-            </div>
-          </div>
+            }
+            className="w-72 h-96 lg:w-80 lg:h-[28rem] animate-float"
+          />
         </div>
       </div>
     </section>
