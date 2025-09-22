@@ -2,12 +2,12 @@ import { Card } from "@/components/ui/card";
 
 const About = () => {
   const skills = [
-    { name: "System Information Management", level: 95, category: "Academic" },
-    { name: "Data Analysis & Processing", level: 90, category: "Technical" },
-    { name: "Product Management", level: 88, category: "Leadership" },
-    { name: "UI/UX Design", level: 85, category: "Design" },
-    { name: "Data Entry & Processing", level: 92, category: "Technical" },
-    { name: "Business Intelligence", level: 80, category: "Technical" }
+    { name: "System Information Management", category: "Academic", strength: "expert" },
+    { name: "Data Analysis & Processing", category: "Technical", strength: "expert" },
+    { name: "Product Management", category: "Leadership", strength: "advanced" },
+    { name: "UI/UX Design", category: "Design", strength: "advanced" },
+    { name: "Data Entry & Processing", category: "Technical", strength: "expert" },
+    { name: "Business Intelligence", category: "Technical", strength: "intermediate" }
   ];
 
   const experience = [
@@ -91,10 +91,24 @@ const About = () => {
             <div className="space-y-4">
               <h4 className="text-lg font-medium text-foreground">Core Competencies</h4>
               {skills.map((skill, index) => (
-                <div key={skill.name} className="space-y-2 group hover:bg-card/50 p-3 rounded-lg transition-all duration-300">
+                <Card key={skill.name} className="p-4 group hover:bg-card/80 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02] border border-primary/10">
                   <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-3 h-3 rounded-full ${
+                        skill.strength === 'expert' ? 'bg-primary animate-pulse' :
+                        skill.strength === 'advanced' ? 'bg-secondary-foreground' :
+                        'bg-muted-foreground'
+                      }`}></div>
                       <span className="text-foreground font-medium group-hover:text-primary transition-colors">{skill.name}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium capitalize ${
+                        skill.strength === 'expert' ? 'bg-primary/20 text-primary' :
+                        skill.strength === 'advanced' ? 'bg-secondary text-secondary-foreground' :
+                        'bg-muted text-muted-foreground'
+                      }`}>
+                        {skill.strength}
+                      </span>
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                         skill.category === 'Technical' ? 'bg-blue-500/20 text-blue-400' :
                         skill.category === 'Leadership' ? 'bg-purple-500/20 text-purple-400' :
@@ -104,18 +118,8 @@ const About = () => {
                         {skill.category}
                       </span>
                     </div>
-                    <span className="text-muted-foreground text-sm group-hover:text-primary transition-colors">{skill.level}%</span>
                   </div>
-                  <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
-                    <div 
-                      className="bg-gradient-brand h-2 rounded-full transition-all duration-1000 ease-out group-hover:shadow-glow"
-                      style={{ 
-                        width: `${skill.level}%`,
-                        animationDelay: `${index * 0.2}s`
-                      }}
-                    ></div>
-                  </div>
-                </div>
+                </Card>
               ))}
             </div>
             
