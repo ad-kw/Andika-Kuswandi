@@ -5,11 +5,9 @@ import heroPortrait from "@/assets/hero-portrait.webp";
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Glass background layers */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-decorative/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-accent/8 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
-      </div>
+      {/* Background glow effects */}
+      <div className="absolute inset-0 bg-gradient-glow opacity-30 animate-pulse-glow"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl animate-float"></div>
       
       <div className="container mx-auto grid lg:grid-cols-2 gap-8 items-center relative z-10">
         {/* Text Content */}
@@ -39,9 +37,9 @@ const Hero = () => {
           
           {/* Tech indicators */}
           <div className="flex gap-3 justify-center lg:justify-start pt-4">
-            <div className="w-2 h-2 cyan-decorative rounded-full animate-pulse shadow-cyan-glow"></div>
-            <div className="w-2 h-2 bg-accent/60 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-            <div className="w-2 h-2 cyan-decorative rounded-full animate-pulse shadow-cyan-glow" style={{animationDelay: '1s'}}></div>
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
           </div>
         </div>
         
