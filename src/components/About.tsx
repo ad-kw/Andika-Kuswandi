@@ -48,11 +48,11 @@ const About = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="text-center p-4 bg-card rounded-lg border border-border">
+              <div className="glass-card text-center p-6 rounded-2xl transition-all duration-500 hover:scale-105">
                 <div className="text-2xl font-bold gradient-text">50+</div>
                 <div className="text-muted-foreground text-sm">Projects Completed</div>
               </div>
-              <div className="text-center p-4 bg-card rounded-lg border border-border">
+              <div className="glass-card text-center p-6 rounded-2xl transition-all duration-500 hover:scale-105">
                 <div className="text-2xl font-bold gradient-text">5+</div>
                 <div className="text-muted-foreground text-sm">Years Experience</div>
               </div>
@@ -69,21 +69,21 @@ const About = () => {
             <div className="space-y-3 mb-6">
               <h4 className="text-lg font-medium text-foreground mb-3">Professional Journey</h4>
               {experience.map((exp, index) => (
-                <Card key={exp.role} className="p-4 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02] border border-primary/10">
+                <div key={exp.role} className="glass-card p-4 rounded-2xl hover:scale-[1.02] transition-all duration-500 cursor-pointer">
                   <div className="flex justify-between items-start">
                     <div>
                       <h5 className="font-semibold text-foreground">{exp.role}</h5>
-                      <p className="text-primary font-medium">{exp.company}</p>
+                      <p className="cyan-decorative font-medium">{exp.company}</p>
                     </div>
                     <div className="text-right">
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        exp.period === 'Current' ? 'bg-primary/20 text-primary' : 'bg-secondary text-secondary-foreground'
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium glass-surface ${
+                        exp.period === 'Current' ? 'cyan-decorative border border-cyan-accent/30' : 'text-secondary-foreground'
                       }`}>
                         {exp.period}
                       </span>
                     </div>
                   </div>
-                </Card>
+                </div>
               ))}
             </div>
             
@@ -91,41 +91,41 @@ const About = () => {
             <div className="space-y-4">
               <h4 className="text-lg font-medium text-foreground">Core Competencies</h4>
               {skills.map((skill, index) => (
-                <Card key={skill.name} className="p-4 group hover:bg-card/80 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02] border border-primary/10">
+                <div key={skill.name} className="glass-card p-4 rounded-2xl transition-all duration-500 cursor-pointer hover:scale-[1.02]">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">
-                      <div className={`w-3 h-3 rounded-full ${
-                        skill.strength === 'expert' ? 'bg-primary animate-pulse' :
-                        skill.strength === 'advanced' ? 'bg-secondary-foreground' :
-                        'bg-muted-foreground'
+                      <div className={`w-3 h-3 rounded-full animate-pulse ${
+                        skill.strength === 'expert' ? 'cyan-decorative shadow-cyan-glow' :
+                        skill.strength === 'advanced' ? 'bg-foreground/60' :
+                        'bg-muted-foreground/60'
                       }`}></div>
-                      <span className="text-foreground font-medium group-hover:text-primary transition-colors">{skill.name}</span>
+                      <span className="text-foreground font-medium hover:text-primary transition-colors">{skill.name}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium capitalize ${
-                        skill.strength === 'expert' ? 'bg-primary/20 text-primary' :
-                        skill.strength === 'advanced' ? 'bg-secondary text-secondary-foreground' :
-                        'bg-muted text-muted-foreground'
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium capitalize glass-surface ${
+                        skill.strength === 'expert' ? 'cyan-decorative border border-cyan-accent/30' :
+                        skill.strength === 'advanced' ? 'text-foreground/80' :
+                        'text-muted-foreground'
                       }`}>
                         {skill.strength}
                       </span>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        skill.category === 'Technical' ? 'bg-blue-500/20 text-blue-400' :
-                        skill.category === 'Leadership' ? 'bg-purple-500/20 text-purple-400' :
-                        skill.category === 'Design' ? 'bg-pink-500/20 text-pink-400' :
-                        'bg-green-500/20 text-green-400'
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium glass-surface ${
+                        skill.category === 'Technical' ? 'text-blue-300/70' :
+                        skill.category === 'Leadership' ? 'text-purple-300/70' :
+                        skill.category === 'Design' ? 'text-pink-300/70' :
+                        'text-green-300/70'
                       }`}>
                         {skill.category}
                       </span>
                     </div>
                   </div>
-                </Card>
+                </div>
               ))}
             </div>
             
-            <Card className="p-6 bg-gradient-surface border border-primary/10 hover:border-primary/20 transition-all duration-300">
+            <div className="glass-card p-6 rounded-2xl transition-all duration-500 hover:scale-[1.02]">
               <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 cyan-decorative rounded-full animate-pulse shadow-cyan-glow"></div>
                 <div>
                   <h4 className="font-semibold text-foreground">Current Focus</h4>
                   <p className="text-muted-foreground text-sm">
@@ -133,7 +133,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </Card>
+            </div>
           </div>
         </div>
       </div>
