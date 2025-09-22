@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 w-full z-50 glass-surface border-b border-glass-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
