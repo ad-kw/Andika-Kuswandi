@@ -8,87 +8,77 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* iOS 26 Liquid Glass Theme - Dynamic Transparency */
-    --background: 0 0% 5%;
-    --foreground: 0 0% 95%;
+    /* Dark theme with cyan accents - Personal Branding */
+    --background: 220 14% 3%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 8% / 0.7;
-    --card-foreground: 0 0% 95%;
+    --card: 220 14% 4%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 10% / 0.8;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 14% 4%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 184 100% 60%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 184 100% 50%;
+    --primary-foreground: 220 14% 3%;
 
-    --secondary: 0 0% 15% / 0.6;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 220 14% 7%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 12% / 0.5;
-    --muted-foreground: 0 0% 70%;
+    --muted: 220 14% 7%;
+    --muted-foreground: 208 12% 67%;
 
-    --accent: 184 80% 70%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 184 100% 75%;
+    --accent-foreground: 220 14% 3%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 20% / 0.3;
-    --input: 0 0% 15% / 0.6;
-    --ring: 184 100% 60%;
+    --border: 220 14% 12%;
+    --input: 220 14% 12%;
+    --ring: 184 100% 50%;
 
-    --radius: 1.5rem;
+    --radius: 0.75rem;
 
-    /* Liquid Glass System */
-    --glass-bg: 0 0% 10% / 0.1;
-    --glass-bg-hover: 0 0% 15% / 0.15;
-    --glass-bg-active: 0 0% 20% / 0.2;
-    --glass-border: 0 0% 50% / 0.2;
-    --glass-border-hover: 0 0% 70% / 0.3;
+    /* Custom brand colors */
+    --brand-cyan: 184 100% 50%;
+    --brand-cyan-light: 184 100% 75%;
+    --brand-cyan-glow: 184 100% 60%;
+    --brand-dark: 220 14% 3%;
+    --brand-surface: 220 14% 4%;
+    --brand-surface-elevated: 220 14% 7%;
     
-    /* Cyan Decorative Elements */
-    --cyan-glow: 184 100% 60% / 0.3;
-    --cyan-accent: 184 80% 70% / 0.6;
-    --cyan-decorative: 184 100% 80% / 0.4;
+    /* Gradients */
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-cyan)), hsl(var(--brand-cyan-light)));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(var(--brand-cyan) / 0.3), transparent 70%);
+    --gradient-surface: linear-gradient(135deg, hsl(var(--brand-surface)), hsl(var(--brand-surface-elevated)));
     
-    /* Dynamic Glass Surfaces */
-    --surface-glass: 0 0% 12% / 0.08;
-    --surface-glass-elevated: 0 0% 18% / 0.12;
-    --surface-glass-focused: 0 0% 25% / 0.15;
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(var(--brand-cyan) / 0.3);
+    --shadow-cyan: 0 4px 20px hsl(var(--brand-cyan) / 0.2);
+    --shadow-elegant: 0 8px 30px -8px hsl(220 14% 1% / 0.8);
     
-    /* Liquid Glass Gradients */
-    --gradient-glass: linear-gradient(135deg, 
-      hsla(0, 0%, 15%, 0.1) 0%, 
-      hsla(0, 0%, 25%, 0.05) 50%, 
-      hsla(184, 80%, 70%, 0.1) 100%);
-    --gradient-glass-hover: linear-gradient(135deg, 
-      hsla(0, 0%, 20%, 0.15) 0%, 
-      hsla(0, 0%, 30%, 0.08) 50%, 
-      hsla(184, 80%, 70%, 0.15) 100%);
-    --gradient-glass-surface: linear-gradient(135deg, 
-      hsla(0, 0%, 8%, 0.6) 0%, 
-      hsla(0, 0%, 15%, 0.4) 100%);
-    
-    /* Glass Morphism Shadows */
-    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    --shadow-glass-hover: 0 16px 64px 0 rgba(0, 0, 0, 0.25);
-    --shadow-cyan-glow: 0 0 40px hsla(184, 100%, 60%, 0.25);
-    --shadow-liquid: 0 4px 30px hsla(0, 0%, 0%, 0.2);
-    
-    /* Liquid Motion */
-    --transition-liquid: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    --transition-glass: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --transition-morph: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
+
     --sidebar-foreground: 240 5.3% 26.1%;
+
     --sidebar-primary: 240 5.9% 10%;
+
     --sidebar-primary-foreground: 0 0% 98%;
+
     --sidebar-accent: 240 4.8% 95.9%;
+
     --sidebar-accent-foreground: 240 5.9% 10%;
+
     --sidebar-border: 220 13% 91%;
+
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  /* Dark theme is our default - no separate dark class needed */
 }
 
 @layer base {
@@ -101,79 +91,17 @@ All colors MUST be HSL.
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* Glass Morphism Utilities */
-  .glass-surface {
-    background: var(--gradient-glass);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid hsla(var(--glass-border));
-    box-shadow: var(--shadow-glass);
-    transition: var(--transition-glass);
+  /* Custom utility classes */
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--brand-cyan) / 0.5);
   }
 
-  .glass-surface:hover {
-    background: var(--gradient-glass-hover);
-    border-color: hsla(var(--glass-border-hover));
-    box-shadow: var(--shadow-glass-hover);
-    transform: translateY(-2px);
-  }
-
-  .glass-card {
-    background: hsla(var(--surface-glass));
-    backdrop-filter: blur(16px) saturate(150%);
-    -webkit-backdrop-filter: blur(16px) saturate(150%);
-    border: 1px solid hsla(var(--glass-border));
-    box-shadow: var(--shadow-liquid);
-  }
-
-  .glass-card:hover {
-    background: hsla(var(--surface-glass-elevated));
-    transform: translateY(-1px) scale(1.01);
-    box-shadow: var(--shadow-glass);
-  }
-
-  .liquid-button {
-    background: var(--gradient-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsla(var(--glass-border));
-    transition: var(--transition-liquid);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .liquid-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, hsla(var(--cyan-glow)), transparent);
-    transition: var(--transition-liquid);
-  }
-
-  .liquid-button:hover::before {
-    left: 100%;
-  }
-
-  .liquid-button:hover {
-    background: var(--gradient-glass-hover);
-    border-color: hsla(var(--cyan-accent));
-    box-shadow: var(--shadow-cyan-glow);
-    transform: translateY(-2px);
-  }
-
-  .cyan-decorative {
-    color: hsla(var(--cyan-decorative));
-    text-shadow: 0 0 10px hsla(var(--cyan-glow));
+  .glow-border {
+    box-shadow: 0 0 0 1px hsl(var(--brand-cyan) / 0.3), var(--shadow-glow);
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, 
-      hsla(184, 80%, 70%, 0.9) 0%, 
-      hsla(184, 100%, 80%, 0.7) 50%,
-      hsla(184, 60%, 60%, 0.8) 100%);
+    background: var(--gradient-brand);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -187,34 +115,17 @@ All colors MUST be HSL.
     animation: pulse-glow 3s ease-in-out infinite;
   }
 
-  .animate-liquid {
-    animation: liquid-flow 8s ease-in-out infinite;
-  }
-
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
   }
 
   @keyframes pulse-glow {
-    0%, 100% { 
-      box-shadow: 0 0 20px hsla(var(--cyan-glow));
-    }
-    50% { 
-      box-shadow: 0 0 40px hsla(var(--cyan-accent)), 0 0 60px hsla(var(--cyan-glow));
-    }
+    0%, 100% { box-shadow: var(--shadow-glow); }
+    50% { box-shadow: 0 0 40px hsl(var(--brand-cyan) / 0.5); }
   }
 
-  @keyframes liquid-flow {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  /* PhotoCard Glass Styles */
+  /* PhotoCard Styles */
   .photocard-container {
     perspective: 1000px;
     transform-style: preserve-3d;
@@ -225,7 +136,7 @@ All colors MUST be HSL.
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: var(--transition-morph);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
     user-select: none;
   }
@@ -251,23 +162,18 @@ All colors MUST be HSL.
   .photocard-front {
     border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
     animation: liquid-morph 8s ease-in-out infinite;
-    box-shadow: var(--shadow-glass), 0 0 30px hsla(var(--cyan-glow));
   }
 
   .photocard-back {
     transform: rotateY(180deg);
-    background: var(--gradient-glass-surface);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid hsla(var(--glass-border));
+    background: linear-gradient(135deg, hsl(var(--brand-surface)), hsl(var(--brand-surface-elevated)));
+    border: 1px solid hsl(var(--border));
     border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
     animation: liquid-morph-reverse 8s ease-in-out infinite;
-    box-shadow: var(--shadow-glass);
   }
 
   .photocard:hover {
     transform: translateY(-5px) scale(1.02);
-    filter: drop-shadow(0 20px 40px hsla(var(--cyan-glow)));
   }
 
   .photocard.flipped:hover {
@@ -305,46 +211,6 @@ All colors MUST be HSL.
     }
     75% {
       border-radius: 50% 50% 20% 80% / 90% 10% 90% 10%;
-    }
-  }
-
-  /* Background Glass Effect */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      ellipse at 20% 50%, 
-      hsla(184, 100%, 60%, 0.1) 0%, 
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 80% 20%, 
-      hsla(184, 80%, 70%, 0.08) 0%, 
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 40% 80%, 
-      hsla(184, 60%, 80%, 0.06) 0%, 
-      transparent 50%
-    );
-    pointer-events: none;
-    z-index: -1;
-    animation: liquid-background 20s ease-in-out infinite;
-  }
-
-  @keyframes liquid-background {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-    }
-    33% {
-      transform: translate(30px, -30px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
     }
   }
 }
