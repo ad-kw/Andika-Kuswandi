@@ -116,6 +116,13 @@ All colors MUST be HSL.
     backdrop-filter: var(--blur-glass);
     border: 1px solid hsl(var(--glass-border));
     box-shadow: var(--shadow-glass);
+    border-radius: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .glass:hover {
+    border-radius: 30% 70% 40% 60% / 50% 60% 30% 70%;
+    transform: scale(1.01);
   }
 
   .glass-strong {
@@ -123,6 +130,13 @@ All colors MUST be HSL.
     backdrop-filter: var(--blur-glass);
     border: 1px solid hsl(var(--glass-border));
     box-shadow: var(--shadow-glass-strong);
+    border-radius: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .glass-strong:hover {
+    border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%;
+    transform: scale(1.02) rotate(0.5deg);
   }
 
   .glass-subtle {
@@ -130,6 +144,41 @@ All colors MUST be HSL.
     backdrop-filter: var(--blur-subtle);
     border: 1px solid hsl(var(--glass-border));
     box-shadow: var(--shadow-glass);
+    border-radius: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .glass-subtle:hover {
+    border-radius: 25% 75% 35% 65% / 55% 45% 65% 35%;
+    transform: scale(1.01);
+  }
+
+  .liquid-card {
+    border-radius: 2rem;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .liquid-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, hsl(var(--brand-cyan) / 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .liquid-card:hover::before {
+    transform: translateX(100%);
+  }
+
+  .liquid-card:hover {
+    border-radius: 30% 70% 40% 60% / 50% 60% 30% 70%;
+    transform: translateY(-8px) scale(1.02);
   }
 
   .gradient-text {
@@ -176,10 +225,97 @@ All colors MUST be HSL.
     }
   }
 
+  @keyframes liquid-wave {
+    0%, 100% {
+      transform: translateX(-50%) translateY(-50%) rotate(0deg);
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    25% {
+      transform: translateX(-50%) translateY(-50%) rotate(90deg);
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    50% {
+      transform: translateX(-50%) translateY(-50%) rotate(180deg);
+      border-radius: 40% 50% 60% 30% / 70% 40% 50% 30%;
+    }
+    75% {
+      transform: translateX(-50%) translateY(-50%) rotate(270deg);
+      border-radius: 70% 30% 40% 60% / 30% 70% 60% 40%;
+    }
+  }
+
+  @keyframes liquid-flow {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+      border-radius: 50% 70% 30% 40% / 60% 30% 70% 40%;
+    }
+    33% {
+      transform: scale(1.1) rotate(120deg);
+      border-radius: 30% 50% 70% 60% / 40% 60% 30% 70%;
+    }
+    66% {
+      transform: scale(0.9) rotate(240deg);
+      border-radius: 70% 40% 50% 30% / 30% 70% 40% 60%;
+    }
+  }
+
+  @keyframes liquid-ripple {
+    0% {
+      transform: scale(1);
+      border-radius: 50%;
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      border-radius: 20% 80% 30% 70% / 60% 40% 70% 30%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes liquid-blob {
+    0%, 100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      border-radius: 30% 70% 40% 60% / 50% 60% 30% 70%;
+      transform: translate(10px, -5px) scale(1.05);
+    }
+    50% {
+      border-radius: 70% 30% 60% 40% / 40% 70% 60% 30%;
+      transform: translate(-5px, 10px) scale(0.95);
+    }
+    75% {
+      border-radius: 40% 60% 70% 30% / 70% 40% 30% 60%;
+      transform: translate(-10px, -5px) scale(1.02);
+    }
+  }
+
   .animate-shimmer {
     background: linear-gradient(90deg, transparent, hsl(var(--brand-cyan) / 0.1), transparent);
     background-size: 200% 100%;
     animation: glass-shimmer 3s ease-in-out infinite;
+  }
+
+  .animate-liquid-wave {
+    animation: liquid-wave 8s ease-in-out infinite;
+  }
+
+  .animate-liquid-flow {
+    animation: liquid-flow 6s ease-in-out infinite;
+  }
+
+  .animate-liquid-blob {
+    animation: liquid-blob 5s ease-in-out infinite;
+  }
+
+  .liquid-hover {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .liquid-hover:hover {
+    border-radius: 30% 70% 40% 60% / 50% 60% 30% 70%;
+    transform: scale(1.02) rotate(1deg);
   }
 
   /* PhotoCard Styles */

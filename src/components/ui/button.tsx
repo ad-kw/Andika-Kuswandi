@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "glass text-foreground hover:glass-strong transition-glass font-medium",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "glass-subtle border-glass-border text-foreground hover:glass transition-glass",
-        secondary: "glass-subtle text-secondary-foreground hover:glass transition-glass",
-        ghost: "hover:glass-subtle hover:text-foreground transition-glass",
+        default: "liquid-hover glass text-foreground hover:glass-strong transition-glass font-medium",
+        destructive: "liquid-hover bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline: "liquid-hover glass-subtle border-glass-border text-foreground hover:glass transition-glass",
+        secondary: "liquid-hover glass-subtle text-secondary-foreground hover:glass transition-glass",
+        ghost: "liquid-hover hover:glass-subtle hover:text-foreground transition-glass",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "gradient-text glass-strong hover:glow-border transition-glass font-semibold shadow-cyan",
-        glass: "glass text-foreground hover:glass-strong transition-glass backdrop-blur-md",
-        glow: "glass border border-primary/20 text-primary hover:glow-border hover:shadow-cyan-glow transition-glass",
+        hero: "gradient-text liquid-card glass-strong hover:glow-border transition-glass font-semibold shadow-cyan",
+        glass: "liquid-hover glass text-foreground hover:glass-strong transition-glass backdrop-blur-md",
+        glow: "liquid-hover glass border border-primary/20 text-primary hover:glow-border hover:shadow-cyan-glow transition-glass",
       },
       size: {
         default: "h-10 px-4 py-2",
