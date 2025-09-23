@@ -7,9 +7,8 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Liquid Glass Background Effects */}
       <div className="absolute inset-0 mesh-bg opacity-60"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-cyan/8 animate-liquid-blob"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-brand-cyan-light/6 animate-liquid-flow" style={{animationDelay: '2s'}}></div>
-      <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-brand-cyan/4 animate-liquid-wave" style={{animationDelay: '4s'}}></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-cyan/8 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-brand-cyan-light/6 rounded-full blur-2xl animate-float" style={{animationDelay: '2s'}}></div>
       <div className="absolute inset-0 animate-shimmer"></div>
       
       <div className="container mx-auto grid lg:grid-cols-2 gap-8 items-center relative z-10">

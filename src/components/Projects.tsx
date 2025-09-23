@@ -35,11 +35,8 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 glass-subtle relative overflow-hidden">
-      {/* Liquid Background Elements */}
-      <div className="absolute top-20 left-20 w-48 h-48 bg-brand-cyan/4 animate-liquid-wave blur-2xl"></div>
-      <div className="absolute bottom-10 right-20 w-36 h-36 bg-brand-cyan-light/3 animate-liquid-blob blur-xl" style={{animationDelay: '2s'}}></div>
-      <div className="container mx-auto relative z-10">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 glass-subtle">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
@@ -53,7 +50,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title} 
-              className={`group liquid-card hover:glow-border transition-glass ${
+              className={`group hover:glow-border transition-glass hover:-translate-y-2 ${
                 project.featured ? 'glass-strong' : 'glass'
               }`}
             >

@@ -17,11 +17,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 relative mesh-bg overflow-hidden">
-      {/* Liquid Background Elements */}
-      <div className="absolute top-10 right-10 w-40 h-40 bg-brand-cyan/5 animate-liquid-blob blur-2xl"></div>
-      <div className="absolute bottom-20 left-10 w-32 h-32 bg-brand-cyan-light/4 animate-liquid-flow blur-xl" style={{animationDelay: '3s'}}></div>
-      <div className="container mx-auto relative z-10">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 relative mesh-bg">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             About <span className="gradient-text">Me</span>
@@ -51,11 +48,11 @@ const About = () => {
             </div>
             
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="text-center p-4 liquid-card glass">
+              <div className="text-center p-4 glass rounded-lg">
                 <div className="text-2xl font-bold gradient-text">50+</div>
                 <div className="text-muted-foreground text-sm">Projects Completed</div>
               </div>
-              <div className="text-center p-4 liquid-card glass">
+              <div className="text-center p-4 glass rounded-lg">
                 <div className="text-2xl font-bold gradient-text">5+</div>
                 <div className="text-muted-foreground text-sm">Years Experience</div>
               </div>
@@ -72,7 +69,7 @@ const About = () => {
             <div className="space-y-3 mb-6">
               <h4 className="text-lg font-medium text-foreground mb-3">Professional Journey</h4>
               {experience.map((exp, index) => (
-                <Card key={exp.role} className="p-4 liquid-card glass hover:glass-strong transition-glass cursor-pointer">
+                <Card key={exp.role} className="p-4 glass hover:glass-strong transition-glass cursor-pointer hover:scale-[1.02]">
                   <div className="flex justify-between items-start">
                     <div>
                       <h5 className="font-semibold text-foreground">{exp.role}</h5>
@@ -94,7 +91,7 @@ const About = () => {
             <div className="space-y-4">
               <h4 className="text-lg font-medium text-foreground">Core Competencies</h4>
               {skills.map((skill, index) => (
-                <Card key={skill.name} className="p-4 group liquid-card glass hover:glass-strong transition-glass cursor-pointer">
+                <Card key={skill.name} className="p-4 group glass hover:glass-strong transition-glass cursor-pointer hover:scale-[1.02]">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">
                       <div className={`w-3 h-3 rounded-full ${
