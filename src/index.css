@@ -8,58 +8,71 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark theme with cyan accents - Personal Branding */
-    --background: 220 14% 3%;
-    --foreground: 210 40% 98%;
+    /* Light iOS 26 Liquid Glass Theme */
+    --background: 0 0% 100%;
+    --foreground: 220 14% 15%;
 
-    --card: 220 14% 4%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100% / 0.85;
+    --card-foreground: 220 14% 15%;
 
-    --popover: 220 14% 4%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100% / 0.95;
+    --popover-foreground: 220 14% 15%;
 
-    --primary: 184 100% 50%;
-    --primary-foreground: 220 14% 3%;
+    --primary: 184 85% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 7%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 14% 25%;
 
-    --muted: 220 14% 7%;
-    --muted-foreground: 208 12% 67%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 12% 45%;
 
-    --accent: 184 100% 75%;
-    --accent-foreground: 220 14% 3%;
+    --accent: 184 60% 85%;
+    --accent-foreground: 220 14% 25%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 14% 12%;
-    --input: 220 14% 12%;
-    --ring: 184 100% 50%;
+    --border: 220 15% 90%;
+    --input: 0 0% 100% / 0.7;
+    --ring: 184 85% 55%;
 
-    --radius: 0.75rem;
+    --radius: 1.25rem;
 
-    /* Custom brand colors */
-    --brand-cyan: 184 100% 50%;
-    --brand-cyan-light: 184 100% 75%;
-    --brand-cyan-glow: 184 100% 60%;
-    --brand-dark: 220 14% 3%;
-    --brand-surface: 220 14% 4%;
-    --brand-surface-elevated: 220 14% 7%;
+    /* iOS 26 Liquid Glass Colors */
+    --glass-white: 0 0% 100%;
+    --glass-surface: 0 0% 100% / 0.85;
+    --glass-surface-light: 0 0% 100% / 0.6;
+    --glass-border: 0 0% 100% / 0.3;
+    --glass-shadow: 220 15% 85%;
     
-    /* Gradients */
-    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-cyan)), hsl(var(--brand-cyan-light)));
-    --gradient-glow: radial-gradient(ellipse at center, hsl(var(--brand-cyan) / 0.3), transparent 70%);
-    --gradient-surface: linear-gradient(135deg, hsl(var(--brand-surface)), hsl(var(--brand-surface-elevated)));
+    /* Cyan Accents */
+    --brand-cyan: 184 85% 55%;
+    --brand-cyan-light: 184 60% 75%;
+    --brand-cyan-subtle: 184 40% 90%;
+    --brand-cyan-glow: 184 85% 65%;
     
-    /* Shadows */
-    --shadow-glow: 0 0 30px hsl(var(--brand-cyan) / 0.3);
-    --shadow-cyan: 0 4px 20px hsl(var(--brand-cyan) / 0.2);
-    --shadow-elegant: 0 8px 30px -8px hsl(220 14% 1% / 0.8);
+    /* Liquid Glass Gradients */
+    --gradient-glass: linear-gradient(135deg, hsl(var(--glass-white) / 0.9), hsl(var(--glass-white) / 0.6));
+    --gradient-cyan: linear-gradient(135deg, hsl(var(--brand-cyan)), hsl(var(--brand-cyan-light)));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(var(--brand-cyan) / 0.15), transparent 70%);
+    --gradient-mesh: radial-gradient(circle at 20% 80%, hsl(var(--brand-cyan-subtle) / 0.3) 0%, transparent 50%),
+                     radial-gradient(circle at 80% 20%, hsl(var(--brand-cyan) / 0.2) 0%, transparent 50%),
+                     radial-gradient(circle at 40% 40%, hsl(var(--brand-cyan-light) / 0.25) 0%, transparent 50%);
     
-    /* Animations */
+    /* Liquid Glass Shadows */
+    --shadow-glass: 0 8px 32px hsl(var(--glass-shadow) / 0.12);
+    --shadow-glass-strong: 0 16px 64px hsl(var(--glass-shadow) / 0.18);
+    --shadow-cyan: 0 4px 20px hsl(var(--brand-cyan) / 0.15);
+    --shadow-cyan-glow: 0 0 40px hsl(var(--brand-cyan) / 0.25);
+    
+    /* Glass Blur Effects */
+    --blur-glass: blur(20px);
+    --blur-subtle: blur(10px);
+    
+    /* Smooth Transitions */
+    --transition-glass: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-glow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -89,22 +102,49 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background: linear-gradient(135deg, 
+      hsl(0 0% 100%) 0%, 
+      hsl(220 15% 98%) 50%, 
+      hsl(184 25% 96%) 100%);
+    background-attachment: fixed;
+    backdrop-filter: var(--blur-subtle);
   }
 
-  /* Custom utility classes */
-  .glow-text {
-    text-shadow: 0 0 20px hsl(var(--brand-cyan) / 0.5);
+  /* Liquid Glass Utility Classes */
+  .glass {
+    background: hsl(var(--glass-surface));
+    backdrop-filter: var(--blur-glass);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
   }
 
-  .glow-border {
-    box-shadow: 0 0 0 1px hsl(var(--brand-cyan) / 0.3), var(--shadow-glow);
+  .glass-strong {
+    background: hsl(var(--glass-white) / 0.95);
+    backdrop-filter: var(--blur-glass);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass-strong);
+  }
+
+  .glass-subtle {
+    background: hsl(var(--glass-surface-light));
+    backdrop-filter: var(--blur-subtle);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
   }
 
   .gradient-text {
-    background: var(--gradient-brand);
+    background: var(--gradient-cyan);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px hsl(var(--brand-cyan) / 0.2), var(--shadow-cyan-glow);
+  }
+
+  .mesh-bg {
+    background: var(--gradient-mesh);
   }
 
   .animate-float {
@@ -121,8 +161,25 @@ All colors MUST be HSL.
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: var(--shadow-glow); }
-    50% { box-shadow: 0 0 40px hsl(var(--brand-cyan) / 0.5); }
+    0%, 100% { box-shadow: var(--shadow-cyan); }
+    50% { box-shadow: var(--shadow-cyan-glow); }
+  }
+
+  @keyframes glass-shimmer {
+    0%, 100% { 
+      background-position: -200% 0;
+      opacity: 0;
+    }
+    50% { 
+      background-position: 200% 0;
+      opacity: 1;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--brand-cyan) / 0.1), transparent);
+    background-size: 200% 100%;
+    animation: glass-shimmer 3s ease-in-out infinite;
   }
 
   /* PhotoCard Styles */
@@ -166,8 +223,10 @@ All colors MUST be HSL.
 
   .photocard-back {
     transform: rotateY(180deg);
-    background: linear-gradient(135deg, hsl(var(--brand-surface)), hsl(var(--brand-surface-elevated)));
-    border: 1px solid hsl(var(--border));
+    background: hsl(var(--glass-surface));
+    backdrop-filter: var(--blur-glass);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
     border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
     animation: liquid-morph-reverse 8s ease-in-out infinite;
   }

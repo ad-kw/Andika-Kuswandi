@@ -35,7 +35,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-surface">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 glass-subtle">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -50,8 +50,8 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title} 
-              className={`group hover:shadow-cyan transition-all duration-300 hover:-translate-y-2 ${
-                project.featured ? 'border-primary/20 bg-gradient-surface' : 'bg-card'
+              className={`group hover:glow-border transition-glass hover:-translate-y-2 ${
+                project.featured ? 'glass-strong' : 'glass'
               }`}
             >
               <CardHeader className="space-y-3">

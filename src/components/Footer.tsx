@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-brand-surface border-t border-border">
+    <footer className="py-12 px-4 sm:px-6 lg:px-8 glass-subtle border-t border-glass-border">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Brand */}
@@ -34,20 +34,20 @@ const Footer = () => {
           {/* Social Links */}
           <div className="text-center md:text-right">
             <div className="flex justify-center md:justify-end space-x-4">
-              <a href="#" className="w-8 h-8 bg-brand-surface-elevated rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+              <a href="#" className="w-8 h-8 glass rounded-full flex items-center justify-center hover:glass-strong hover:glow-border transition-glass">
                 <div className="w-4 h-4 bg-primary rounded-sm"></div>
               </a>
-              <a href="#" className="w-8 h-8 bg-brand-surface-elevated rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+              <a href="#" className="w-8 h-8 glass rounded-full flex items-center justify-center hover:glass-strong hover:glow-border transition-glass">
                 <div className="w-4 h-4 bg-primary rounded-sm"></div>
               </a>
-              <a href="#" className="w-8 h-8 bg-brand-surface-elevated rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+              <a href="#" className="w-8 h-8 glass rounded-full flex items-center justify-center hover:glass-strong hover:glow-border transition-glass">
                 <div className="w-4 h-4 bg-primary rounded-sm"></div>
               </a>
             </div>
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-border text-center">
+        <div className="mt-8 pt-8 border-t border-glass-border text-center">
           <p className="text-muted-foreground text-sm">
             © 2024 Portfolio. Crafted with passion and cutting-edge technology.
           </p>

@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 mesh-bg">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -32,7 +32,7 @@ const Contact = () => {
             </div>
             
             <div className="space-y-6">
-              <Card className="p-6 bg-gradient-surface border border-primary/10 hover:border-primary/20 transition-colors">
+              <Card className="p-6 glass hover:glass-strong transition-glass">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
                     <div className="w-6 h-6 bg-primary rounded-sm"></div>
@@ -44,7 +44,7 @@ const Contact = () => {
                 </div>
               </Card>
               
-              <Card className="p-6 bg-gradient-surface border border-primary/10 hover:border-primary/20 transition-colors">
+              <Card className="p-6 glass hover:glass-strong transition-glass">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
                     <div className="w-6 h-6 bg-primary rounded-sm"></div>
@@ -56,7 +56,7 @@ const Contact = () => {
                 </div>
               </Card>
               
-              <Card className="p-6 bg-gradient-surface border border-primary/10 hover:border-primary/20 transition-colors">
+              <Card className="p-6 glass hover:glass-strong transition-glass">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
                     <div className="w-6 h-6 bg-primary rounded-sm"></div>
@@ -71,7 +71,7 @@ const Contact = () => {
           </div>
           
           {/* Contact Form */}
-          <Card className="bg-card border border-border">
+          <Card className="glass-strong">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-foreground">
                 Send a Message
@@ -81,22 +81,22 @@ const Contact = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="firstName" className="text-foreground">First Name</Label>
-                  <Input id="firstName" placeholder="John" className="bg-background border-border" />
+                  <Input id="firstName" placeholder="John" className="glass-subtle" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="lastName" className="text-foreground">Last Name</Label>
-                  <Input id="lastName" placeholder="Doe" className="bg-background border-border" />
+                  <Input id="lastName" placeholder="Doe" className="glass-subtle" />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-foreground">Email</Label>
-                <Input id="email" type="email" placeholder="john@example.com" className="bg-background border-border" />
+                <Input id="email" type="email" placeholder="john@example.com" className="glass-subtle" />
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="subject" className="text-foreground">Subject</Label>
-                <Input id="subject" placeholder="Project Discussion" className="bg-background border-border" />
+                <Input id="subject" placeholder="Project Discussion" className="glass-subtle" />
               </div>
               
               <div className="space-y-2">
@@ -104,7 +104,7 @@ const Contact = () => {
                 <Textarea 
                   id="message" 
                   placeholder="Tell me about your project..."
-                  className="bg-background border-border min-h-[120px]"
+                  className="glass-subtle min-h-[120px]"
                 />
               </div>
               
