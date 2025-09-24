@@ -177,9 +177,97 @@ All colors MUST be HSL.
   }
 
   .animate-shimmer {
+    position: relative;
+  }
+  
+  .animate-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(90deg, transparent, hsl(var(--brand-cyan) / 0.1), transparent);
-    background-size: 200% 100%;
     animation: glass-shimmer 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Enhanced responsive animations */
+  @keyframes liquid-breathe {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    33% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+    66% { transform: scale(0.95) rotate(-1deg); opacity: 0.9; }
+  }
+
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-5px) translateX(2px); }
+    50% { transform: translateY(-10px) translateX(-2px); }
+    75% { transform: translateY(-5px) translateX(1px); }
+  }
+
+  @keyframes scroll-reveal {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  .animate-breathe {
+    animation: liquid-breathe 4s ease-in-out infinite;
+  }
+
+  .animate-gentle-float {
+    animation: gentle-float 6s ease-in-out infinite;
+  }
+
+  .animate-scroll-reveal {
+    animation: scroll-reveal 0.6s ease-out forwards;
+  }
+
+  /* Interactive hover effects */
+  .interactive-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+  }
+
+  .interactive-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-glass-strong), var(--shadow-cyan-glow);
+  }
+
+  .interactive-card:active {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  /* Enhanced responsive navigation */
+  .nav-fixed {
+    backdrop-filter: var(--blur-glass);
+    border-bottom: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+    z-index: 9999 !important;
+  }
+
+  /* Mobile-first responsive utilities */
+  @media (max-width: 768px) {
+    .glass {
+      backdrop-filter: blur(15px);
+      background: hsl(var(--glass-surface) / 0.95);
+    }
+    
+    .animate-float {
+      animation-duration: 8s;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .desktop-hover:hover {
+      transform: translateY(-12px) scale(1.03);
+    }
   }
 
   /* PhotoCard Styles */
