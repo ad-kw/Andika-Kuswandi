@@ -6,8 +6,11 @@ import { Label } from "@/components/ui/label";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 mesh-bg">
-      <div className="container mx-auto">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 mesh-bg relative overflow-hidden">
+      {/* Liquid Background Elements */}
+      <div className="absolute top-16 right-16 w-44 h-44 bg-brand-cyan/5 animate-liquid-flow blur-2xl"></div>
+      <div className="absolute bottom-16 left-16 w-28 h-28 bg-brand-cyan-light/4 animate-liquid-wave blur-xl" style={{animationDelay: '1s'}}></div>
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Get In <span className="gradient-text">Touch</span>
@@ -32,7 +35,7 @@ const Contact = () => {
             </div>
             
             <div className="space-y-6">
-              <Card className="p-6 glass hover:glass-strong transition-glass">
+              <Card className="p-6 liquid-card glass hover:glass-strong transition-glass">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
                     <div className="w-6 h-6 bg-primary rounded-sm"></div>
@@ -44,7 +47,7 @@ const Contact = () => {
                 </div>
               </Card>
               
-              <Card className="p-6 glass hover:glass-strong transition-glass">
+              <Card className="p-6 liquid-card glass hover:glass-strong transition-glass">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
                     <div className="w-6 h-6 bg-primary rounded-sm"></div>
@@ -56,7 +59,7 @@ const Contact = () => {
                 </div>
               </Card>
               
-              <Card className="p-6 glass hover:glass-strong transition-glass">
+              <Card className="p-6 liquid-card glass hover:glass-strong transition-glass">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
                     <div className="w-6 h-6 bg-primary rounded-sm"></div>
@@ -71,7 +74,7 @@ const Contact = () => {
           </div>
           
           {/* Contact Form */}
-          <Card className="glass-strong">
+          <Card className="liquid-card glass-strong">
             <CardHeader>
               <CardTitle className="text-xl font-bold text-foreground">
                 Send a Message
